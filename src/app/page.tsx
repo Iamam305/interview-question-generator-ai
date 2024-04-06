@@ -19,7 +19,7 @@ export default function Home() {
       new_fd.append("jd", jd);
 
       const response = await fetch(
-        "http://localhost:3000/api/create-questions",
+        "/api/create-questions",
         {
           method: "POST",
           body: new_fd,
