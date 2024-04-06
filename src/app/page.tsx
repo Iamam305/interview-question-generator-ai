@@ -50,7 +50,7 @@ export default function Home() {
             {/* End Title */}
             <div className="max-w-2xl mx-auto divide-y divide-gray-200 dark:divide-gray-700">
               {questions?.map((question) => (
-                <div className="py-8 first:pt-0 last:pb-0">
+                <div key={question._id} className="py-8 first:pt-0 last:pb-0">
                   <div className="flex gap-x-5">
                     <svg
                       className="flex-shrink-0 mt-1 size-6 text-gray-500"
@@ -105,7 +105,7 @@ export default function Home() {
                     accept="application/pdf"
                     id="hs-feedback-post-comment-name-1"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                    onChange={(e) => setResume(e.target.files[0])}
+                    onChange={(e) => setResume(e.target.files![0])}
                   />
                 </div>
                 <div className="mb-4 sm:mb-8">
@@ -121,7 +121,7 @@ export default function Home() {
                     id="hs-feedback-post-comment-email-1"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                     placeholder="Email address"
-                    onChange={(e) => setJd(e.target.files[0])}
+                    onChange={(e) => setJd(e.target.files![0] as File)}
                   />
                 </div>
 
